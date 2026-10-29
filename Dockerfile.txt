@@ -1,0 +1,10 @@
+FROM php:8.1-apache
+
+# Install MySQL extensions for PHP
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Copy the PHP code into Apache's web root directory
+COPY index.php /var/www/html/index.php
+
+# Expose port 80 for web traffic
+EXPOSE 80
